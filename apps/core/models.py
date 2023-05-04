@@ -1,3 +1,9 @@
 from django.db import models
 
-# Create your models here.
+
+class BaseModel(models.Model):
+    created_at = models.DateTimeField('Cadastrado em', auto_now_add=True)
+    updated_at = models.DateTimeField('Modificado em', auto_now=True)
+
+    class Meta:
+        abstract = True

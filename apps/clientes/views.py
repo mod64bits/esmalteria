@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from django.views.generic.list import ListView
+from .models import Cliente
 
-# Create your views here.
+
+class ListaClienteView(ListView):
+    model = Cliente
+    template_name = "clientes/index.html"
